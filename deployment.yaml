@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: tech365
-        image: 418272776333.dkr.ecr.us-east-1.amazonaws.com/myapp
+        image: 965638719914.dkr.ecr.eu-north-1.amazonaws.com/
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
