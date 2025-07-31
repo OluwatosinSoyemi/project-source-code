@@ -15,8 +15,8 @@ pipeline{
         stage('Compile and Run Sonar Analysis'){
             steps{
                 script {
-                    withCredentials([string(credentialsId: 'tech365token', variable: 'tech365token')]) {
-                        sh 'mvn clean verify sonar:sonar -Dsonar.token=$tech365token -Dsonar.organization=tech3651 -Dsonar.projectKey=tech3651 -Dsonar.host.url=https://sonarcloud.io'
+                    withCredentials([string(credentialsId: 'tech365token5', variable: 'tech365token')]) {
+                        sh 'mvn clean verify sonar:sonar -Dsonar.token=$tech365token -Dsonar.organization=tech3655 -Dsonar.projectKey=tech3655 -Dsonar.host.url=https://sonarcloud.io'
                     }
                 }
             }
@@ -45,7 +45,7 @@ pipeline{
         stage('Push Docker Image to ECR'){
             steps{
                 script{
-                    docker.withRegistry('https://418272776333.dkr.ecr.us-east-1.amazonaws.com','ecr:us-east-1:aws-credentials') {
+                    docker.withRegistry('https://965638719914.dkr.ecr.eu-north-1.amazonaws.com','ecr:eu-north-1:aws-credentials') {
                     app.push("latest")
                 }
                 }
